@@ -1,5 +1,4 @@
 import random
-from random_word import RandomWords
 import time as t
 t.perf_counter()
 
@@ -8,13 +7,14 @@ name = input("What's your good name? ")
 
 print(f"Good Luck ! {name}")
 
-def randomwordGenerate():
-  while True:
-    r=RandomWords()
-    words= r.get_random_words()
-    word = random.choice(words)
-    print(word)
-    return word
+def randomWords():
+
+  words = ['rainbow', 'computer', 'science', 'programming', 
+          'python', 'mathematics', 'player', 'condition', 
+          'reverse', 'water', 'board', 'geeks'] 
+  word=random.choice(words)
+  print(word)
+  return word
 
 
 def playGame(word):
@@ -62,7 +62,7 @@ def playGame(word):
       toc = t.perf_counter()
   print(f"Total time taken: {toc - tic:0.2f} seconds")
 
-word=randomwordGenerate()
+word=randomWords()
 playGame(word)
 
     
