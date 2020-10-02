@@ -23,7 +23,7 @@ def playGame(word):
   guesses = ''
   turns = 10
   tic = t.perf_counter()
-  
+  ls = []
   while turns > 0:
 
 
@@ -46,7 +46,11 @@ def playGame(word):
           print("The word is: ", word)
           break
 
-      guess = input("\n\nguess a character:")
+      guess = input("\n\nguess a character:")[0]
+      if guess in ls:
+          print("Character already given")
+          continue;
+      ls.append(guess)
       guesses += guess
 
       if guess not in word:
@@ -64,7 +68,3 @@ def playGame(word):
 
 word=randomWords()
 playGame(word)
-
-    
-    
-    
